@@ -1,6 +1,10 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
 import { User } from "./entity/User";
+import { Role } from "./entity/Role";
+import { Post } from "./entity/Post";
+import { Permission } from "./entity/Permission";
+import { Comment } from "./entity/Comment";
 
 export const AppDataSource = new DataSource({
   type: "postgres",
@@ -18,7 +22,7 @@ export const AppDataSource = new DataSource({
       sslmode: "require",
     },
   },
-  entities: [User],
+  entities: [Role, User, Post, Permission, Comment],
   migrations: [],
   subscribers: [],
 });
