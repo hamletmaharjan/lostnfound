@@ -4,9 +4,12 @@ import {
   Column,
   CreateDateColumn,
   OneToMany,
+  ManyToMany,
+  JoinTable,
 } from "typeorm";
 
 import { User } from "./User";
+import { Permission } from "./Permission";
 
 @Entity()
 export class Role {
@@ -27,4 +30,8 @@ export class Role {
 
   @OneToMany(() => User, (user) => user.role)
   users: User[];
+
+  @ManyToMany(() => Permission)
+  @JoinTable()
+  categories: Permission[];
 }
