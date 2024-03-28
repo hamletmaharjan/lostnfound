@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
     "lib": [
-      "es5",
-      "es6"
+      "es6",
+      "DOM" // Include "dom" for browser APIs like fetch
     ],
-    "target": "es5",
-    "module": "commonjs",
+    "target": "es6", // Target ES6 or above
+    "module": "esnext", // Use ES modules
     "moduleResolution": "node",
     "outDir": "./build",
     "emitDecoratorMetadata": true,
