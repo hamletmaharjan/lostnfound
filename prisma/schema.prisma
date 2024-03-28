@@ -1,0 +1,84 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model comment {
+  id        Int      @id(map: "PK_0b0e4bbc8415ec426f87f3a88e2") @default(autoincrement())
+  message   String
+  slug      String   @db.VarChar
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  updatedAt DateTime @default(now()) @db.Timestamp(6)
+  userId    Int?
+  postId    Int?
+  post      post?    @relation(fields: [postId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "FK_94a85bb16d24033a2afdd5df060")
+  user      user?    @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "FK_c0354a9a009d3bb45a08655ce3b")
+}
+
+model permission {
+  id                         Int                          @id(map: "PK_3b8b97af9d9d8807e41e6f48362") @default(autoincrement())
+  name                       String                       @db.VarChar
+  slug                       String                       @db.VarChar
+  description                String
+  createdAt                  DateTime                     @default(now()) @db.Timestamp(6)
+  role_categories_permission role_categories_permission[]
+}
+
+model post {
+  id        Int       @id(map: "PK_be5fda3aac270b134ff9c21cdee") @default(autoincrement())
+  title     String    @db.VarChar
+  body      String
+  status    String    @db.VarChar
+  image     String    @db.VarChar
+  createdAt DateTime  @default(now()) @db.Timestamp(6)
+  updatedAt DateTime  @default(now()) @db.Timestamp(6)
+  isDeleted Boolean
+  userId    Int?
+  comments  comment[]
+  user      user?     @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "FK_5c1cf55c308037b5aca1038a131")
+}
+
+model role {
+  id                         Int                          @id(map: "PK_b36bcfe02fc8de3c57a8b2391c2") @default(autoincrement())
+  name                       String                       @db.VarChar
+  slug                       String                       @db.VarChar
+  description                String
+  createdAt                  DateTime                     @default(now()) @db.Timestamp(6)
+  role_categories_permission role_categories_permission[]
+  users                      user[]
+}
+
+model role_categories_permission {
+  roleId       Int
+  permissionId Int
+  permission   permission @relation(fields: [permissionId], references: [id], onDelete: Cascade, map: "FK_55187fac58ba492b60d919bfb6b")
+  role         role       @relation(fields: [roleId], references: [id], onDelete: Cascade, map: "FK_c060405299dd117ed40ca13bf0b")
+
+  @@id([roleId, permissionId], map: "PK_b99ceec6d54087a3ef1650f0507")
+  @@index([permissionId], map: "IDX_55187fac58ba492b60d919bfb6")
+  @@index([roleId], map: "IDX_c060405299dd117ed40ca13bf0")
+}
+
+model user {
+  id        Int              @id(map: "PK_cace4a159ff9f2512dd42373760") @default(autoincrement())
+  firstName String           @db.VarChar
+  lastName  String           @db.VarChar
+  username  String           @db.VarChar
+  password  String           @db.VarChar
+  email     String           @db.VarChar
+  gender    user_gender_enum
+  createdAt DateTime         @default(now()) @db.Timestamp(6)
+  roleId    Int?
+  comments  comment[]
+  posts     post[]
+  role      role?            @relation(fields: [roleId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "FK_c28e52f758e7bbc53828db92194")
+}
+
+enum user_gender_enum {
+  male   @map("0")
+  female @map("1")
+}
