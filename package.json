@@ -11,11 +11,14 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.540.0",
+    "@aws-sdk/s3-presigned-post": "^3.540.0",
     "@chakra-ui/next-js": "^2.2.0",
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
     "@prisma/client": "^5.11.0",
+    "aws-sdk": "^2.1588.0",
     "dotenv": "^16.4.5",
     "framer-motion": "^11.0.21",
     "next": "14.1.4",
@@ -24,7 +27,8 @@
     "react": "^18",
     "react-dom": "^18",
     "reflect-metadata": "^0.1.13",
-    "typeorm": "0.3.20"
+    "typeorm": "0.3.20",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/node": "^16.11.10",

@@ -7,14 +7,14 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "POST") {
-    const { title, body } = req.body;
+    const { title, body, image } = req.body;
     const result = await prisma.post.create({
       data: {
         title: title,
         body,
         userId: 1,
         status: "live",
-        image: "test",
+        image: image,
         isDeleted: false,
       },
     });
