@@ -1,40 +1,19 @@
-import "reflect-metadata";
-import dotenv from "dotenv";
+import { PrismaClient } from "@prisma/client";
 
-dotenv.config();
+const prisma = new PrismaClient();
 
-import { AppDataSource } from "./data-source";
-import { User } from "./entity/User";
+async function main() {
+  // ... you will write your Prisma Client queries here
+  const allUsers = await prisma.user.findMany();
+  console.log(allUsers);
+}
 
-import { Gender } from "./entity/User";
-import { Role } from "./entity/Role";
-
-AppDataSource.initialize()
+main()
   .then(async () => {
-    // console.log("Inserting a new user into the database...");
-
-    // const role = new Role();
-    // role.name = "admin";
-    // role.slug = "admin";
-    // role.description = "admin";
-    // await AppDataSource.manager.save(role);
-    // const user = new User();
-    // user.firstName = "Carlos";
-    // user.lastName = "Condit";
-    // user.username = "nbk";
-    // user.email = "condit@live.com";
-    // user.password = "condit";
-    // user.gender = Gender.male;
-    // user.role = role;
-    // await AppDataSource.manager.save(user);
-    // console.log("Saved a new user with id: " + user.id);
-
-    // console.log("Loading users from the database...");
-    // const users = await AppDataSource.manager.find(User);
-    // console.log("Loaded users: ", users);
-
-    console.log(
-      "Here you can setup and run express / fastify / any other framework."
-    );
+    await prisma.$disconnect();
   })
-  .catch((error) => console.log(error));
+  .catch(async (e) => {
+    console.error(e);
+    await prisma.$disconnect();
+    process.exit(1);
+  });
