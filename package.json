@@ -22,6 +22,7 @@
     "dotenv": "^16.4.5",
     "framer-motion": "^11.0.21",
     "next": "14.1.4",
+    "next-auth": "^4.24.7",
     "node-fetch": "^3.3.2",
     "pg": "^8.4.0",
     "react": "^18",

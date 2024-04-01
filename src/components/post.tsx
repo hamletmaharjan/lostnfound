@@ -18,7 +18,7 @@ export default function Post({ post }) {
       <CardHeader>
         <Flex>
           <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap">
-            <Avatar name="Segun Adebayo" src="https://bit.ly/sage-adebayo" />
+            <Avatar name="Segun Adebayo" />
             <Box>
               <Heading size="sm">{post.title}</Heading>
               <Text>Username</Text>

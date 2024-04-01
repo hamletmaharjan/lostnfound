@@ -1,8 +1,8 @@
 import { Box, Grid, GridItem } from "@chakra-ui/react";
 // import fetch from "node-fetch";
 
-import Navbar from "../components/navbar";
-import Post from "../components/post";
+import Navbar from "../../components/navbar";
+import Post from "../../components/post";
 
 async function getData() {
   const res = await fetch(`${process.env.BASE_URL}/api/posts`, {
