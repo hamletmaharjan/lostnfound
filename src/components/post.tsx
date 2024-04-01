@@ -8,10 +8,14 @@ import {
   IconButton,
   Text,
   Box,
+  Link,
   Avatar,
   Image,
   Button,
 } from "@chakra-ui/react";
+
+import NextLink from "next/link";
+
 export default function Post({ post }) {
   return (
     <Card maxW="md">
@@ -20,7 +24,11 @@ export default function Post({ post }) {
           <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap">
             <Avatar name="Segun Adebayo" />
             <Box>
-              <Heading size="sm">{post.title}</Heading>
+              <Heading size="sm">
+                <Link as={NextLink} href={`/${post.id}`}>
+                  {post.title}
+                </Link>
+              </Heading>
               <Text>Username</Text>
             </Box>
           </Flex>

@@ -20,29 +20,27 @@ export function PostSkeleton() {
 export default function Loading() {
   // return <div>Loading...</div>;
   return (
-    <Box maxWidth={"1080px"} marginX="auto">
-      <Box mt="40px">
-        <Grid templateColumns="repeat(3, 1fr)" gap={6}>
-          <GridItem>
-            <PostSkeleton />
-          </GridItem>
-          <GridItem>
-            <PostSkeleton />
-          </GridItem>
-          <GridItem>
-            <PostSkeleton />
-          </GridItem>
-          <GridItem>
-            <PostSkeleton />
-          </GridItem>
-          <GridItem>
-            <PostSkeleton />
-          </GridItem>
-          <GridItem>
-            <PostSkeleton />
-          </GridItem>
-        </Grid>
-      </Box>
+    <Box maxWidth={"1080px"} marginX="auto" mt="40px">
+      <Grid templateColumns="repeat(3, 1fr)" gap={6}>
+        <GridItem>
+          <PostSkeleton />
+        </GridItem>
+        <GridItem>
+          <PostSkeleton />
+        </GridItem>
+        <GridItem>
+          <PostSkeleton />
+        </GridItem>
+        <GridItem>
+          <PostSkeleton />
+        </GridItem>
+        <GridItem>
+          <PostSkeleton />
+        </GridItem>
+        <GridItem>
+          <PostSkeleton />
+        </GridItem>
+      </Grid>
     </Box>
   );
 }

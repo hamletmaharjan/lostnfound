@@ -18,9 +18,11 @@ export default async function handler(
         isDeleted: false,
       },
     });
+
     return res.status(201).json(result);
   } else {
     const posts = await prisma.post.findMany();
+    await new Promise((resolve) => setTimeout(resolve, 3000));
     res.status(200).json(posts);
   }
 }

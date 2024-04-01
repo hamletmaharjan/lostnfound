@@ -13,18 +13,21 @@ async function getData() {
   }
   return res.json();
 }
+
 export default async function Home() {
+  // return <Box>Hello</Box>;
   const data = await getData();
   // console.log(data);
   return (
-    <Box maxWidth={"1080px"} marginX="auto">
-      <Box mt="40px">
-        <Grid templateColumns="repeat(3, 1fr)" gap={6}>
-          {data.map((post) => (
-            <Post key={post.id} post={post} />
-          ))}
-        </Grid>
-      </Box>
+    <Box maxWidth={"1080px"} marginX="auto" mt="40px">
+      <Grid templateColumns="repeat(3, 1fr)" gap={6}>
+        {/* <Box>Hell</Box> */}
+        {data.map((post) => (
+          <GridItem key={post.id}>
+            <Post post={post} />
+          </GridItem>
+        ))}
+      </Grid>
     </Box>
   );
 }

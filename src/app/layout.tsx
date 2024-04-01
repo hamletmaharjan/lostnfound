@@ -24,7 +24,7 @@ export default function RootLayout({
         <Providers>
           <Box maxWidth={"1080px"} marginX={"auto"}>
             <Navbar />
-            <Box>{children}</Box>
+            <Box suppressHydrationWarning>{children}</Box>
           </Box>
         </Providers>
       </body>
