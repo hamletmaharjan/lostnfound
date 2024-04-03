@@ -1,6 +1,8 @@
 "use client";
 
-import { Flex, Box, Text, Link } from "@chakra-ui/react";
+import { Flex, Box, Text } from "@chakra-ui/react";
+import { Link } from "@chakra-ui/next-js";
+
 import { usePathname } from "next/navigation";
 import NextLink from "next/link";
 

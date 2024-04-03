@@ -1,16 +1,13 @@
-// "use client";
+"use client";
 import { Button, Flex, Input } from "@chakra-ui/react";
 
 import { addComment } from "../../lib/actions";
 
 export default function CommentForm({ params }: { params: { id: string } }) {
-  // const [message, setMessage] = useState("");
-  // Action
-
-  async function create(formData: FormData) {
-    "use server";
+  function create(formData: FormData) {
+    // "use server";
     formData.set("postId", params.id);
-    await addComment(formData);
+    addComment(formData);
   }
   return (
     <form action={create}>

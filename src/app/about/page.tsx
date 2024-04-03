@@ -1,4 +1,9 @@
+import { Metadata } from "next";
 import styles from "./about.module.css";
+
+export const metadata: Metadata = {
+  title: "About",
+};
 
 export default function About() {
   return (

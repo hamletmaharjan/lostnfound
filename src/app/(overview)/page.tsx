@@ -1,7 +1,5 @@
 import { Box, Grid, GridItem } from "@chakra-ui/react";
-// import fetch from "node-fetch";
 
-import Navbar from "../../components/navbar";
 import Post from "../../components/post";
 
 async function getData() {
@@ -15,13 +13,11 @@ async function getData() {
 }
 
 export default async function Home() {
-  // return <Box>Hello</Box>;
   const data = await getData();
-  // console.log(data);
+
   return (
     <Box marginX="auto" mt="40px">
       <Grid templateColumns="repeat(3, 1fr)" gap={6}>
-        {/* <Box>Hell</Box> */}
         {data.map((post) => (
           <GridItem key={post.id}>
             <Post post={post} />
