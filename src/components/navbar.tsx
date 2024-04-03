@@ -1,6 +1,8 @@
 "use client";
 
-import { Flex, Box, Text, Link } from "@chakra-ui/react";
+import { Flex, Box, Text } from "@chakra-ui/react";
+import { Link } from "@chakra-ui/next-js";
+
 import { usePathname } from "next/navigation";
 import NextLink from "next/link";
 
@@ -26,6 +28,13 @@ export default function Navbar() {
           href="/"
         >
           Home
+        </Link>
+        <Link
+          sx={pathname === "/images" ? styles.activeLink : styles.link}
+          as={NextLink}
+          href="/images"
+        >
+          Images
         </Link>
         <Link
           sx={pathname === "/about" ? styles.activeLink : styles.link}

@@ -36,15 +36,13 @@ export default async function PostDetail({
   return (
     <Card>
       <CardHeader>
-        <Flex>
-          <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap">
-            <Avatar name="Segun Adebayo" src="https://bit.ly/sage-adebayo" />
+        <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap">
+          <Avatar name="Segun Adebayo" src="https://bit.ly/sage-adebayo" />
 
-            <Box>
-              <Heading size="sm">{post.title}</Heading>
-              <Text>username</Text>
-            </Box>
-          </Flex>
+          <Box>
+            <Heading size="sm">{post.title}</Heading>
+            <Text>username</Text>
+          </Box>
         </Flex>
       </CardHeader>
       <CardBody>

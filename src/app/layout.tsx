@@ -9,8 +9,11 @@ import Navbar from "../components/navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "LostnFound",
-  description: "Lost and Found",
+  title: {
+    template: "%s | LostnFound",
+    default: "LostnFound",
+  },
+  description: "Lost and Found.",
 };
 
 export default function RootLayout({

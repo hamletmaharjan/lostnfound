@@ -29,7 +29,8 @@
     "react-dom": "^18",
     "reflect-metadata": "^0.1.13",
     "typeorm": "0.3.20",
-    "uuid": "^9.0.1"
+    "uuid": "^9.0.1",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "^16.11.10",
