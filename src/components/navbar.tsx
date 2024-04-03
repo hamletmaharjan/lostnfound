@@ -28,6 +28,13 @@ export default function Navbar() {
           Home
         </Link>
         <Link
+          sx={pathname === "/images" ? styles.activeLink : styles.link}
+          as={NextLink}
+          href="/images"
+        >
+          Images
+        </Link>
+        <Link
           sx={pathname === "/about" ? styles.activeLink : styles.link}
           as={NextLink}
           href="/about"

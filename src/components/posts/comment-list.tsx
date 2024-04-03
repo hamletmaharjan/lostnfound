@@ -25,7 +25,7 @@ async function getData(id) {
 
 export function CommmentsSkeleton() {
   return (
-    <Stack>
+    <Stack mt="24px">
       <Skeleton height="48px" />
       <Skeleton height="48px" />
       <Skeleton height="48px" />

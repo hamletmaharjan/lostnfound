@@ -19,7 +19,7 @@ export default async function Home() {
   const data = await getData();
   // console.log(data);
   return (
-    <Box maxWidth={"1080px"} marginX="auto" mt="40px">
+    <Box marginX="auto" mt="40px">
       <Grid templateColumns="repeat(3, 1fr)" gap={6}>
         {/* <Box>Hell</Box> */}
         {data.map((post) => (
