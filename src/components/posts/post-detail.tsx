@@ -37,7 +37,7 @@ export default async function PostDetail({
     <Card>
       <CardHeader>
         <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap">
-          <Avatar name="Segun Adebayo" src="https://bit.ly/sage-adebayo" />
+          <Avatar name="Segun Adebayo" />
 
           <Box>
             <Heading size="sm">{post.title}</Heading>
