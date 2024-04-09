@@ -1,7 +1,8 @@
 import { Box } from "@chakra-ui/react";
 import { Suspense } from "react";
 
-import { PostSkeleton } from "../loading";
+// import { PostSkeleton } from "../../(overview)/loading";
+import PostSkeleton from "../../../components/posts/post-skeleton";
 import PostDetail from "../../../components/posts/post-detail";
 import CommentList, {
   CommmentsSkeleton,
@@ -9,8 +10,6 @@ import CommentList, {
 import CommentInput from "../../../components/posts/comment-form";
 
 export default function Page({ params }: { params: { id: string } }) {
-  // const post = await getData(params.id);
-  // console.log("params", post);
   return (
     <Box maxW="800px" mb={"60px"}>
       <Suspense fallback={<PostSkeleton />}>

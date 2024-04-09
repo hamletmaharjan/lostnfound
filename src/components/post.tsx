@@ -25,7 +25,7 @@ export default function Post({ post }) {
             <Avatar name="Segun Adebayo" />
             <Box>
               <Heading size="sm">
-                <Link as={NextLink} href={`/${post.id}`}>
+                <Link as={NextLink} href={`/posts/${post.id}`}>
                   {post.title}
                 </Link>
               </Heading>

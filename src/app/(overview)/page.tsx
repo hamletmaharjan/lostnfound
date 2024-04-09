@@ -1,11 +1,11 @@
 import { Box, Grid, GridItem } from "@chakra-ui/react";
 
 import Post from "../../components/post";
-
+// , {
+//   cache: "no-store",
+// }
 async function getData() {
-  const res = await fetch(`${process.env.BASE_URL}/api/posts`, {
-    cache: "no-store",
-  });
+  const res = await fetch(`${process.env.BASE_URL}/api/posts`);
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
@@ -27,3 +27,5 @@ export default async function Home() {
     </Box>
   );
 }
+
+export const dynamic = "force-dynamic";
